@@ -1,2 +1,14 @@
-package com.example.demo.config;public class WebConfig {
+package com.example.demo.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+
+@Configuration
+public class WebConfig {
+
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring().requestMatchers("/ignore1", "/ignore2");
+    }
 }

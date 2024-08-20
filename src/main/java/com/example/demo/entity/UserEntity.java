@@ -4,14 +4,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
 @Getter
 @Setter
 @Entity(name="user")
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
